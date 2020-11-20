@@ -8,8 +8,7 @@ app.use(express.static(__dirname + "/stylesheets"));
 
 app.get("/", async (req, res, next) => {
   try {
-    const data = await client.query(html);
-    res.send(data);
+    res.send(layout());
   } catch (error) {
     console.log(error);
     next();
